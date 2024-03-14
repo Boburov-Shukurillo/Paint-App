@@ -67,10 +67,8 @@ canvas.addEventListener("mousemove", (e) => {
 });
 
 Download.addEventListener("click", () => {
-  Download.href="./img/brush.svg"
-  // Download.download=true
-  // let link = document.createElement("a");
-  // link.download = true;
-  // link.href='./img/brush.svg'
-  // document.body.appendChild(link);
+  let link = document.createElement("a");
+  link.download = `${Date.now()}.png`;
+  link.href = canvas.toDataURL();
+  link.click();
 });
